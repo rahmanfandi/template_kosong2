@@ -3,9 +3,7 @@ import 'package:flutter/material.dart';
 //import 'package:firebase_storage/firebase_storage.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_application_4/home.dart';
-
-TextEditingController username = TextEditingController();
-TextEditingController password = TextEditingController();
+import 'package:flutter_application_4/navigation.dart';
 
 class login extends StatefulWidget {
   const login({super.key});
@@ -28,9 +26,9 @@ class _login extends State<login> {
       } else {
         //   print('User is signed in!');
 
-        Navigator.push(
+        Navigator.pushReplacement(
           context,
-          MaterialPageRoute(builder: (context) => home()),
+          MaterialPageRoute(builder: (context) => navigation()),
         );
       }
     });
@@ -66,6 +64,8 @@ class _login extends State<login> {
   Color color1 = Color.fromARGB(255, 251, 231, 255);
   @override
   Widget build(BuildContext context) {
+    //  TextEditingController username = TextEditingController();
+    //  TextEditingController password = TextEditingController();
     TextEditingController email = TextEditingController();
     TextEditingController password = TextEditingController();
 
@@ -108,7 +108,7 @@ class _login extends State<login> {
                   child: ElevatedButton(
                     style: style,
                     onPressed: () {
-                      login(username.text, password.text);
+                      login(email.text, password.text);
                     },
                     child: const Text('Sign-In'),
                   ),

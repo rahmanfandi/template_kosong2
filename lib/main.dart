@@ -1,4 +1,4 @@
-import 'dart:js';
+//import 'dart:js';
 
 import 'package:flutter/material.dart';
 
@@ -44,7 +44,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      initialRoute: '/nav',
+      initialRoute: '/login',
       routes: {
         // '/': (context) => const MyLogin(),
         // '/catalog': (context) => const MyCatalog(),
